@@ -10,7 +10,7 @@ This repository contains everything needed to run a persistent Minecraft server 
 
 - declarative infrastructure (Terraform)
 - GitOps deployment (ArgoCD)
-- automatic world backups to S3
+- automatic world backups to S3 (other varios)
 - restore from latest backup on pod start
 - private cluster access via WireGuard
 - basic ingress exposure
@@ -58,7 +58,7 @@ It is intended both as a personal server setup and as a reference implementation
 
    → save bucket name + access key + secret key from output
 
-3. Install k3s on your server
+3. Install k3s 
    curl -sfL https://get.k3s.io | sh -
    # copy kubeconfig to local ~/.kube/config and fix server address
 
@@ -93,8 +93,8 @@ It is intended both as a personal server setup and as a reference implementation
 
 ## Accessing the server
 
-- Public: mc.your-domain.com:25565 (via ingress)
-- Private: connect to server IP through WireGuard tunnel
+- Public: mc.wizard.dedyn.io:25555     nginx -> (via ingress)
+- Private: connect to server IP through WireGuard tunnel wg2
 
 ## Backup & restore logic
 
